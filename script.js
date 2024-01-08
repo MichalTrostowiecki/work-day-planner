@@ -1,4 +1,29 @@
+// Load any existing data from the local storage
+$(function () {
+    let oldData = localStorage.getItem("data");
+    oldData = JSON.parse(oldData);
 
+    // Set data-hour attribute to each element
+    $(".hour").each(function () {
+        let hourText = $(this).text();
+        $(this).attr("data-hour", hourText);
+    })
+    
+    if (oldData) {
+        // Iterate over the oldData
+        for (let key in oldData) {
+            // Find the span with the matching data-hour attribute
+            let timeBlockHour = $('[data-hour="' + oldData[key].hour + '"]');
+
+            // Check if the element exists
+            if (timeBlockHour.length) {
+                // Set the text of the associated textarea element
+                timeBlockHour.closest('.input-group').find('textarea').val(oldData[key].text);
+            }
+        }
+    }
+    
+})
 
 
 
