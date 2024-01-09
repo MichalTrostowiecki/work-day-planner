@@ -4,15 +4,7 @@ body {
   line-height: 1;
 }
 
-textarea {
-  background: transparent;
-  border: none;
-  resize: none;
-  color: #000000;
-  border-left: 1px solid black;
-  padding: 10px;
-}
-
+/* Header Style */
 header {
   text-align: center;
   background-color: transparent;
@@ -22,15 +14,20 @@ header {
   padding: 60px;
 }
 
-.description {
-  white-space: pre-wrap;
-}
-
+/* Time blocks style */
 .time-block {
   text-align: center;
   border-radius: 15px;
 }
 
+textarea {
+  background: transparent;
+  border: none;
+  resize: none;
+  color: #000000;
+  border-left: 1px solid black;
+  padding: 10px;
+}
 
 
 .input-group .form-control {
@@ -66,6 +63,7 @@ header {
   color: white;
 }
 
+/* Save button style*/
 .saveBtn {
   border-left: 1px solid black;
   border-top-right-radius: 15px;
@@ -78,4 +76,15 @@ header {
 .saveBtn i:hover {
   font-size: 20px;
   transition: all 0.3s ease-in-out;
+}
+
+/* Message - on save style*/
+#message {
+  display: flex;
+  justify-content: center;
+  height: 30px;
+  align-items: center;
+  background-color: #06d525;
+  border-radius: 10px; 
+  color: white;
 }

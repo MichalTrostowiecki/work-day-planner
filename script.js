@@ -1,5 +1,6 @@
 // Load any existing data from the local storage
 $(function () {
+
     let oldData = localStorage.getItem("data");
     oldData = JSON.parse(oldData);
 
@@ -66,15 +67,18 @@ $(function () {
         // Apply the appropriate class based on comparison
         if (hour < timeNow) {
             $(textArea).addClass('past');
+            $(textArea).css({ 'background-color': '#d3d3d3' })
         } else if (hour === timeNow) {
             $(textArea).addClass('present');
+            $(textArea).css({ 'background-color': '#ff6961' })
         } else {
             $(textArea).addClass('future');
+            $(textArea).css({ 'background-color': '#77dd77' })
         }
     });
 });
 
-// Convert formattedTime (eg. "9 AM") to 24-hour format
+// Convert formattedTime (eg. 9 AM) to 24-hour format
 function convertTo24Hour(timeStr) {
 
     // Break timeStr to to time (eg. 9 and AM)
@@ -125,6 +129,17 @@ $(".saveBtn").on("click", function () {
     }
 
     localStorage.setItem("data", JSON.stringify(localData));
+
+
+    // Show message after task is add
+    $("#message").show();
+
+
+    // Hide message after 3 seconds
+    setTimeout(function () {
+        $("#message").hide();
+    }, 3000)
+
 });
 
 
