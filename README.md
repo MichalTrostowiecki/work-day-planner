@@ -15,7 +15,7 @@ N/A
     1. Open html file in your browser.
     2. Fill in a task and press save button to store your data.
 
-Link to the website: 
+Link to the website: https://michaltrostowiecki.github.io/work-day-planner/
 
 ![Screenshot](./assets/images/screenshot.png)
 ## Credits
